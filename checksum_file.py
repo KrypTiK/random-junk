@@ -4,7 +4,7 @@ from sys import argv,exit
 from hashlib import md5,sha1,sha256
 
 def all(file):
-  exit(
+    exit(
 		"MD5: "+md5(open(file, 'rb').read()).hexdigest()
 		+"\n"+
 		"SHA1: "+sha1(open(file, 'rb').read()).hexdigest()
