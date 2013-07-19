@@ -6,7 +6,7 @@ getLogger("scapy.runtime").setLevel(ERROR)
 from scapy.all import rdpcap
 
 if len(argv) == 2:
-	read = rdpcap(argv[1]+".pcap")
+    read = rdpcap(argv[1]+".pcap")
 else:
 	exit("usage: python %s <file_to_read(no ext)>"%argv[0])
 
