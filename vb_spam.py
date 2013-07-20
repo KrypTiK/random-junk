@@ -53,13 +53,7 @@ def spam():
         link = a['href']
     br.open(forum_url+link)
     bs = BeautifulSoup(br.response(), 'lxml')
-    try:
-        br.select_form(name='vbform')
-    except:
-        f = open('error.html','w')
-        f.write(str(bs))
-        f.close()
-        exit()
+    br.select_form(name='vbform')
     br.form['subject'] = postinfo['title']
     br.form['message'] = postinfo['message']
     br.submit()
