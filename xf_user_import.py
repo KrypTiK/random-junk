@@ -4,7 +4,6 @@
 
 import mechanize
 from sys import stdout,exit
-from time import sleep
 
 user = '' #admin user
 password = '' #admin pass
