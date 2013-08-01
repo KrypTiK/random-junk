@@ -3,7 +3,7 @@
 
 
 import mechanize
-from sys import stdout
+from sys import stdout,exit
 from time import sleep
 
 user = '' #admin user
@@ -12,7 +12,14 @@ password = '' #admin pass
 f = open('import.txt','r') #file with username:email:password 
 
 for x in f.readlines():
-  br = mechanize.Browser()
+
+	str = x.strip()
+	info = str.split(':')
+	
+	stdout.write("\r Creating user: %s" % info[0])
+	stdout.flush()
+
+	br = mechanize.Browser()
 	br.open('http://localhost/xenforo/admin.php?users/add')
 
 	br.select_form(nr=0)
@@ -23,12 +30,6 @@ for x in f.readlines():
 
 	br.select_form(nr=1)
 	
-	str = x.strip()
-	info = str.split(':')
-	
-	stdout.write("\r Creating user: %s" % info[0])
-	stdout.flush()
-	
 	br.form['username'] = info[0]
 	br.form['email'] = info[1]
 	br.form['password'] = info[2]
@@ -36,3 +37,4 @@ for x in f.readlines():
 	br.submit()
 	
 f.close()
+exit('Import complete')
