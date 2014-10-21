@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#Created by KrypTiK
 
 import urllib2
 from sys import argv
