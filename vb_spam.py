@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#Created by KrypTiK / Contact: 0xE011CFD0@gmail.com
+#Created by KrypTiK
 #Only edit where specified
 #Will work on this more
 
